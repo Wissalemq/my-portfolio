@@ -61,21 +61,21 @@
     .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
     .logo{width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg, var(--primary), var(--secondary)); box-shadow: 0 8px 22px rgba(227,75,181,.35);}
     /* add to your existing .logo block */
-.logo{
-  display:flex;                 /* center the letter */
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  color:#fff;                   /* letter color */
-  font-weight:800;
-  font-size:18px;               /* tweak size if you want */
-  text-shadow:0 2px 8px rgba(0,0,0,.25);
-}
+    .logo{
+      display:flex;                 /* center the letter */
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      color:#fff;                   /* letter color */
+      font-weight:800;
+      font-size:18px;               /* tweak size if you want */
+      text-shadow:0 2px 8px rgba(0,0,0,.25);
+    }
 
-/* add this new rule */
-.logo::after{
-  content:"W";                  /* your initial */
-}
+    /* add this new rule */
+    .logo::after{
+      content:"W";                  /* your initial */
+    }
 
     .nav a{ color: var(--muted); text-decoration:none; font-weight:500; padding:10px 14px; border-radius:999px; transition:.2s}
     .nav a:hover{ color:var(--ink); background: var(--glass);}
@@ -84,27 +84,25 @@
 
     /* ===== hero ===== */
     .hero{  padding: 84px 0 56px;}
-    .hero h1{   
-  position: relative;
-  margin-bottom: 16px;
-  font-size: clamp(2rem, 3.6vw, 3.2rem); line-height:1.12; margin: 0 0 10px; font-weight:800;
-
-  padding-bottom: 1.4em;   /* reserves space for the animated line */
-}
-.gradient-text{
-  /* --- updated gradient text colors --- */
-  background:linear-gradient(90deg, #ff9add, #a78bfa, #5cc8ff);
-  -webkit-background-clip:text; background-clip:text; color:transparent
-}
-#typer{
-  position: absolute;
-  left: 0;
-  bottom: 0;               /* sits on the reserved line inside the h1 */
-  width: 35ch;             /* reserve width (tweak if needed) */
-  white-space: nowrap;
-}
-.card::after { pointer-events: none; }
-
+    .hero h1{
+      position: relative;
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.6vw, 3.2rem); line-height:1.12; margin: 0 0 10px; font-weight:800;
+      padding-bottom: 1.4em;   /* reserves space for the animated line */
+    }
+    .gradient-text{
+      /* --- updated gradient text colors --- */
+      background:linear-gradient(90deg, #ff9add, #a78bfa, #5cc8ff);
+      -webkit-background-clip:text; background-clip:text; color:transparent
+    }
+    #typer{
+      position: absolute;
+      left: 0;
+      bottom: 0;               /* sits on the reserved line inside the h1 */
+      width: 35ch;             /* reserve width (tweak if needed) */
+      white-space: nowrap;
+    }
+    .card::after { pointer-events: none; }
 
     .subtitle{ color: var(--muted); font-size: clamp(1rem, 2.2vw, 1.25rem); max-width: 820px;}
     /* --- updated pill colors --- */
@@ -152,7 +150,7 @@
     /* small helpers */
     .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace }
     .nowrap{ white-space:nowrap }
-  
+
     /* ===== contact form ===== */
     form.contact{ display:grid; gap:14px }
     .form-row{ display:grid; gap:12px }
@@ -166,7 +164,7 @@
     .btn.submit[disabled]{ opacity:.6; cursor:not-allowed }
     .form-note{ font-size:.9rem; color: var(--muted) }
     .toast{ display:none; margin-top:10px; padding:12px 14px; border-radius:12px; background: rgba(34,197,94,.15); border:1px solid rgba(34,197,94,.35); color:#d4ffe0 }
-  
+
     /* ===== featured project ===== */
     .featured{ position:relative; overflow:hidden; display:grid; gap:18px; grid-template-columns: 1.2fr 1fr }
     /* keep the soft glow, works with new colors */
@@ -177,196 +175,167 @@
     .featured .preview small{ color: var(--muted) }
     .featured .actions{ margin-top:16px }
     @media (max-width: 900px){ .featured{ grid-template-columns: 1fr } }
+
     /* ===== Mobile tweaks ===== */
-@media (max-width: 680px){
-  header.site .nav{ gap:12px; }
-  header.site nav{
-    overflow-x:auto;
-    white-space:nowrap;           /* keep links on one line */
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  header.site nav::-webkit-scrollbar{ display:none; }
-  .nav a{ padding:8px 10px; font-size:.95rem; }
-  .cta{ padding:8px 12px; }
-  
-  .brand span{ font-size:1rem; }  /* smaller name to fit */
-  .logo{ width:32px; height:32px; }
-  
-  /* hero sizing */
-  .hero{ padding:72px 0 44px; }
-  .hero h1{ font-size: clamp(1.6rem, 8vw, 2.2rem); padding-bottom:1.2em; }
-  #typer{ width: clamp(16ch, 70vw, 28ch); }  /* no layout shift on small screens */
-  .subtitle{ font-size:1rem; }
+    @media (max-width: 680px){
+      header.site .nav{ gap:12px; }
+      header.site nav{
+        overflow-x:auto;
+        white-space:nowrap;           /* keep links on one line */
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      header.site nav::-webkit-scrollbar{ display:none; }
+      .nav a{ padding:8px 10px; font-size:.95rem; }
+      .cta{ padding:8px 12px; }
 
-  /* section spacing & cards */
-  section{ padding:48px 0; }
-  .underline{ width:48px; }
-  .featured{ grid-template-columns:1fr; }
-  .actions .btn{ padding:10px 15px; margin-left: 4%;}
-}
+      .brand span{ font-size:1rem; }  /* smaller name to fit */
+      .logo{ width:32px; height:32px; }
 
-/* iOS notch safe-area */
-@supports (padding: max(0px)){
-  header.site{ padding-top:max(0px, env(safe-area-inset-top)); }
-  body{
-    padding-left:max(0px, env(safe-area-inset-left));
-    padding-right:max(0px, env(safe-area-inset-right));
-  }
-}
-/* ===== Mobile menu (hamburger) ===== */
-.hamburger{ display:none; position:relative; width:42px; height:38px; border:1px solid var(--glass-stroke);
-  background: var(--glass); border-radius:12px; align-items:center; justify-content:center; gap:5px; }
-.hamburger span{ display:block; width:20px; height:2px; background: var(--ink); border-radius:2px; transition:.25s }
-.hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg) }
-.hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0 }
-.hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg) }
+      /* hero sizing */
+      .hero{ padding:72px 0 44px; }
+      .hero h1{ font-size: clamp(1.6rem, 8vw, 2.2rem); padding-bottom:1.2em; }
+      #typer{ width: clamp(16ch, 70vw, 28ch); }  /* no layout shift on small screens */
+      .subtitle{ font-size:1rem; }
 
-.mnav{ position:fixed; inset:0; display:flex; flex-direction:column; gap:14px; padding:84px 22px 22px;
-  background: rgba(18,8,26,.85); backdrop-filter: blur(10px); transform: translateY(-100%); transition:.3s ease; z-index:60; }
-.mnav.open{ transform: translateY(0) }
-.mnav a{ display:block; padding:14px 16px; border-radius:12px; background: rgba(255,255,255,.06);
-  border:1px solid var(--glass-stroke); color: var(--ink); text-decoration:none; font-weight:600 }
-.mnav a.cta{ background: linear-gradient(135deg, var(--accent), var(--primary)); color:#fff }
+      /* section spacing & cards */
+      section{ padding:48px 0; }
+      .underline{ width:48px; }
+      .featured{ grid-template-columns:1fr; }
+      .actions .btn{ padding:10px 15px; margin-left: 4%;}
+    }
 
-body.noscroll{ overflow:hidden }
+    /* iOS notch safe-area */
+    @supports (padding: max(0px)){
+      header.site{ padding-top:max(0px, env(safe-area-inset-top)); }
+      body{
+        padding-left:max(0px, env(safe-area-inset-left));
+        padding-right:max(0px, env(safe-area-inset-right));
+      }
+    }
 
-/* show hamburger & hide desktop nav on small screens */
-@media (max-width: 820px){
-  header.site nav{ display:none }
-  .hamburger{ display:inline-flex }
-}
+    /* ===== Mobile menu (hamburger) ===== */
+    .hamburger{ display:none; position:relative; width:42px; height:38px; border:1px solid var(--glass-stroke);
+      background: var(--glass); border-radius:12px; align-items:center; justify-content:center; gap:5px; }
+    .hamburger span{ display:block; width:20px; height:2px; background: var(--ink); border-radius:2px; transition:.25s }
+    .hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg) }
+    .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0 }
+    .hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg) }
 
-/* ===== Hero mobile fixes (typer & subtitle) ===== */
-@media (max-width: 680px){
-  .hero{ padding: 68px 0 40px }
-  .hero h1{ font-size: clamp(1.7rem, 8vw, 2.2rem); padding-bottom: 0 } /* no reserved line when static */
-  #typer{ position: static !important; display:block; min-height:1.2em;
-          width: auto; white-space: normal; } /* let it wrap, no clipping */
-  .subtitle{ font-size: 1.05rem; line-height: 1.6; }
-}
-/* Hide mobile menu by default (all sizes) */
-#mobileMenu[hidden]{ display:none !important; }
+    .mnav{ position:fixed; inset:0; display:flex; flex-direction:column; gap:14px; padding:84px 22px 22px;
+      background: rgba(18,8,26,.85); backdrop-filter: blur(10px); transform: translateY(-100%); transition:.3s ease; z-index:60; }
+    .mnav.open{ transform: translateY(0) }
+    .mnav a{ display:block; padding:14px 16px; border-radius:12px; background: rgba(255,255,255,.06);
+      border:1px solid var(--glass-stroke); color: var(--ink); text-decoration:none; font-weight:600 }
+    .mnav a.cta{ background: linear-gradient(135deg, var(--accent), var(--primary)); color:#fff }
 
-/* Desktop: show normal nav, hide hamburger & mobile panel */
-@media (min-width: 821px){
-  header.site nav{ display:flex !important; }
-  .hamburger{ display:none !important; }
-  #mobileMenu{ display:none !important; }   /* safety */
-}
+    body.noscroll{ overflow:hidden }
 
-/* Mobile: hide desktop nav, show hamburger */
-@media (max-width: 820px){
-  header.site nav{ display:none !important; }
-  .hamburger{ display:inline-flex !important; }
-}
+    /* show hamburger & hide desktop nav on small screens */
+    @media (max-width: 820px){
+      header.site nav{ display:none }
+      .hamburger{ display:inline-flex }
+    }
 
-/* Make the mobile panel a true overlay and not push content */
-/* Full-screen dark overlay for the mobile menu */
-/* Mobile menu overlay — opaque and above everything */
-/* Force opaque, full-screen mobile menu overlay */
-.mnav{
-  position: fixed; inset: 0; z-index: 1000;
-  height: 72dvh;                 /* important on mobile to cover full view */
-  display: flex; flex-direction: column; gap: 14px;
-  padding: 96px 22px 22px;
-  background: #130820;            /* solid, non-transparent */
-  transform: translateY(-100%); transition: transform .28s ease;
-}
-.mnav.open{ transform: translateY(0) }
-.mnav-close{
-  position:absolute; top:12px; right:16px;
-  width:40px; height:40px; border-radius:12px;
-  background:#1b0e2b; color:#fff; border:1px solid var(--glass-stroke);
-  font-size:20px; line-height:40px; text-align:center; cursor:pointer;
-  z-index:1001; /* above menu links */
-}
-    .mnav a{display:block;padding:14px 16px;border-radius:12px;background:#1b0e2b;border:1px solid var(--glass-stroke);color:var(--ink);text-decoration:none;font-weight:600}
-    .mnav a.cta{background:linear-gradient(135deg,var(--accent),var(--primary));color:#fff}
-/* Hero mobile: fix typer + subtitle squeeze */
-@media (max-width: 680px){
-  .hero h1{ padding-bottom:0; margin-left: 5%;}
-  #typer{ position:static !important; display:block; width:auto; white-space:normal; }
-  .subtitle{ font-size:1.05rem; line-height:1.6; margin-left: 4%; }
-}
-@media (max-width: 820px){
-  header.site nav{ display:none !important; }
-  .hamburger{
-    display: inline-flex !important;
-    position: fixed;               /* float above overlay */
-    top: 12px;
-    right: 16px;
-    z-index: 1101;                 /* higher than .mnav (1000) */
-  }
-}
-/* Hamburger: stack bars vertically and float above overlay on mobile */
-.hamburger{
-  display: none;
-  position: relative;
-  width: 44px; height: 40px;
-  border: 1px solid var(--glass-stroke);
-  background: var(--glass);
-  border-radius: 12px;
-  align-items: center; justify-content: center;
-  gap: 6px; 
-  /* NEW: make bars vertical */
-  flex-direction: column;
-}
+    /* ===== Hero mobile fixes (typer & subtitle) ===== */
+    @media (max-width: 680px){
+      .hero{ padding: 68px 0 40px }
+      .hero h1{ font-size: clamp(1.7rem, 8vw, 2.2rem); padding-bottom: 0 } /* no reserved line when static */
+      #typer{ position: static !important; display:block; min-height:1.2em;
+              width: auto; white-space: normal; } /* let it wrap, no clipping */
+      .subtitle{ font-size: 1.05rem; line-height: 1.6; }
+    }
 
-.hamburger span{
-  display: block;
-  width: 24px; height: 3px;          /* thicker lines */
-  background: var(--ink);
-  border-radius: 3px;
-  transition: .25s;
-}
+    /* Hide mobile menu by default (all sizes) */
+    #mobileMenu[hidden]{ display:none !important; }
 
-/* animate to X */
-.hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
-.hamburger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
-.hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+    /* Desktop: show normal nav, hide hamburger & mobile panel */
+    @media (min-width: 821px){
+      header.site nav{ display:flex !important; }
+      .hamburger{ display:none !important; }
+      #mobileMenu{ display:none !important; }   /* safety */
+    }
 
-/* Show only on mobile and keep above the overlay */
-@media (max-width: 820px){
-  header.site nav{ display: none !important; }
-  .hamburger{
-    display: inline-flex !important;
-    position: fixed; top: 12px; right: 16px; z-index: 1101;   /* above .mnav (1000) */
-  }
-}
+    /* Mobile: hide desktop nav, show hamburger */
+    @media (max-width: 820px){
+      header.site nav{ display:none !important; }
+      .hamburger{
+        display: inline-flex !important;
+        position: fixed;               /* float above overlay */
+        top: 12px;
+        right: 16px;
+        z-index: 1101;                 /* higher than .mnav (1000) */
+      }
+    }
 
-/* Desktop: hide hamburger, show normal nav */
-@media (min-width: 821px){
-  header.site nav{ display: flex !important; }
-  .hamburger{ display: none !important; }
-  #mobileMenu{ display: none !important; }
-}
+    /* Hamburger: stack bars vertically and float above overlay on mobile */
+    .hamburger{
+      display: none;
+      position: relative;
+      width: 44px; height: 40px;
+      border: 1px solid var(--glass-stroke);
+      background: var(--glass);
+      border-radius: 12px;
+      align-items: center; justify-content: center;
+      gap: 6px;
+      /* NEW: make bars vertical */
+      flex-direction: column;
+    }
 
-/* Make sure hidden attribute actually hides the panel (typo-proof) */
-#mobileMenu[hidden]{ display:none !important; }
+    .hamburger span{
+      display: block;
+      width: 24px; height: 3px;          /* thicker lines */
+      background: var(--ink);
+      border-radius: 3px;
+      transition: .25s;
+    }
 
-/* MOBILE: lock the typer area so the page doesn't jump */
-@media (max-width: 680px){
-  /* reserve space under the H1 for 2 lines of typer text */
-  .hero h1{
-    /* 1.35em line-height × 2 lines = stable height */
-    padding-bottom: calc(1.35em * 2) !important;
-    /* keep your font-size rules as you had them */
-  }
+    /* animate to X */
+    .hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-  /* put the typer back to absolute, allow wrapping, and fill width */
-  #typer{
-    position: absolute !important;
-    left: 0; right: 0; bottom: 0;
-    display: block;
-    white-space: normal;           /* allow wrapping */
-    line-height: 1.35em;           /* matches the calc above */
-    width: 100% !important;        /* don't cap width to 35ch on mobile */
-  }
+    /* Show only on mobile and keep above the overlay */
+    @media (max-width: 820px){
+      header.site nav{ display: none !important; }
+      .hamburger{
+        display: inline-flex !important;
+        position: fixed; top: 12px; right: 16px; z-index: 1101;   /* above .mnav (1000) */
+      }
+    }
 
-  /* optional: tiny spacing tweak below the H1 */
-  .subtitle{ margin-top: 8px; }
-}
+    /* Desktop: hide hamburger, show normal nav */
+    @media (min-width: 821px){
+      header.site nav{ display: flex !important; }
+      .hamburger{ display: none !important; }
+      #mobileMenu{ display: none !important; }
+    }
+
+    /* Make sure hidden attribute actually hides the panel (typo-proof) */
+    #mobileMenu[hidden]{ display:none !important; }
+
+    /* MOBILE: lock the typer area so the page doesn't jump */
+    @media (max-width: 680px){
+      /* reserve space under the H1 for 2 lines of typer text */
+      .hero h1{
+        /* 1.35em line-height × 2 lines = stable height */
+        padding-bottom: calc(1.35em * 2) !important;
+        /* keep your font-size rules as you had them */
+      }
+
+      /* put the typer back to absolute, allow wrapping, and fill width */
+      #typer{
+        position: absolute !important;
+        left: 0; right: 0; bottom: 0;
+        display: block;
+        white-space: normal;           /* allow wrapping */
+        line-height: 1.35em;           /* matches the calc above */
+        width: 100% !important;        /* don't cap width to 35ch on mobile */
+      }
+
+      /* optional: tiny spacing tweak below the H1 */
+      .subtitle{ margin-top: 8px; }
+    }
 
   </style>
 </head>
@@ -375,45 +344,40 @@ body.noscroll{ overflow:hidden }
   <div class="orb two"></div>
 
   <header class="site">
-  <div class="wrap nav">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <span>Wissale Maqsoud</span>
-    </div>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Wissale Maqsoud</span>
+      </div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Featured Projects</a>
-      <a href="#modyfloor">My Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact" class="cta">Contact</a>
-    </nav>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Featured Projects</a>
+        <a href="#modyfloor">My Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
 
-    <!-- Hamburger (visible on mobile only) -->
-    <button class="hamburger" id="ham" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<!-- Full-screen mobile menu (must be OUTSIDE the header) -->
-<nav id="mobileMenu" class="mnav" hidden>
-  <button class="mnav-close" id="mnavClose" aria-label="Close menu">✕</button>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Featured Projects</a>
-  <a href="#modyfloor">My Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#contact" class="cta">Contact</a>
-</nav>
-
-
-
+      <!-- Hamburger (visible on mobile only) -->
+      <button class="hamburger" id="ham" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Full-screen mobile menu (must be OUTSIDE the header) -->
+  <nav id="mobileMenu" class="mnav" hidden>
+    <button class="mnav-close" id="mnavClose" aria-label="Close menu">✕</button>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Featured Projects</a>
+    <a href="#modyfloor">My Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
 
   <main>
     <section class="hero wrap">
@@ -435,6 +399,9 @@ body.noscroll{ overflow:hidden }
       <div class="card">
         <p>
           Based in <b>Casablanca</b>, I'm a recent Computer Science graduate with a minor in Business Administration. I enjoy solving real problems with code, from object-oriented design to data and network-aware applications. I thrive in multidisciplinary teams and love turning ideas into polished, production-ready features. Beyond the technical side, I value collaboration, adaptability, and continuous learning, which help me contribute effectively in dynamic environments. My background in both technology and business gives me the ability to understand not only how systems work but also how they deliver value, allowing me to bridge the gap between technical solutions and strategic goals.
+        </p>
+        <p style="margin-top:10px;">
+          I am also <b>chargée du développement digital</b> au sein de l’Association ASLI, where I designed and built their official website and support the association’s broader digital presence (content, email flows, and forms).
         </p>
         <p style="margin-top:10px; color:#cbd0ff">Languages: Arabic (native), French (fluent), English (fluent), Spanish (intermediate).</p>
       </div>
@@ -472,15 +439,14 @@ body.noscroll{ overflow:hidden }
           </div>
         </div>
         <div class="card tilt">
-  <h3>Soft Skills</h3>
-  <p>Communication · Teamwork · Problem-Solving · Adaptability · Leadership</p>
-  <div>
-    <span class="tag">Collaboration</span>
-    <span class="tag">Time Management</span>
-    <span class="tag">Critical Thinking</span>
-  </div>
-</div>
-
+          <h3>Soft Skills</h3>
+          <p>Communication · Teamwork · Problem-Solving · Adaptability · Leadership</p>
+          <div>
+            <span class="tag">Collaboration</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Critical Thinking</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -531,25 +497,45 @@ body.noscroll{ overflow:hidden }
       </div>
     </section>
 
-    <!-- My Projects: MODYFLOOR -->
+    <!-- My Projects: MODYFLOOR + ASLI -->
     <section id="modyfloor" class="wrap reveal">
       <h2 class="section-title">My Projects</h2>
       <div class="underline"></div>
-      <div class="card featured tilt">
+
+      <!-- MODYFLOOR -->
+      <div class="card featured tilt" style="margin-bottom:22px;">
         <div>
           <span class="mono meta">2025 · Professional Website</span>
           <h3>MODYFLOOR — Flooring Brand</h3>
           <p>Designed and developed a clean, performant website to showcase homogeneous and conductive flooring collections with optimized navigation and fast loading. The project was built for Adawall in Casablanca, with a focus on combining modern design principles and technical efficiency to highlight the brand’s products in a professional, user-friendly way.</p>
-<div class="actions">
-  <a class="btn" href="https://modyfloor.ma" target="_blank">Visit modyfloor.ma</a>
-  <a class="btn" href="https://modyfloor.com" target="_blank">Visit modyfloor.com</a>
-</div>
+          <div class="actions">
+            <a class="btn" href="https://modyfloor.ma" target="_blank" rel="noopener">Visit modyfloor.ma</a>
+            <a class="btn" href="https://modyfloor.com" target="_blank" rel="noopener">Visit modyfloor.com</a>
+          </div>
         </div>
-<div class="preview">
-  <a href="https://modyfloor.ma" target="_blank" rel="noopener">
-    <img src="modyfloor.jpg" alt="MODYFLOOR website screenshot" style="width:100%; height:100%; object-fit:cover;" />
-  </a>
-</div>
+        <div class="preview">
+          <a href="https://modyfloor.ma" target="_blank" rel="noopener">
+            <img src="modyfloor.jpg" alt="MODYFLOOR website screenshot" style="width:100%; height:100%; object-fit:cover;" />
+          </a>
+        </div>
+      </div>
+
+      <!-- ASLI ASSOCIATION WEBSITE -->
+      <div class="card featured tilt">
+        <div>
+          <span class="mono meta">2025 · Association Website</span>
+          <h3>ASLI — Association & Diaspora Network</h3>
+          <p>Designed and developed the official website for Association ASLI, a France–Morocco diaspora and cultural association. I built a modern React-based experience with event archives, press and media sections, membership and collaboration forms, and automated email flows. The site highlights ASLI’s actions, partners, and community in a clear, accessible way while staying faithful to the association’s visual identity.</p>
+          <div class="actions">
+            <a class="btn" href="https://asso-asli.fr" target="_blank" rel="noopener">Visit asso-asli.fr</a>
+          </div>
+        </div>
+        <div class="preview">
+          <a href="https://asso-asli.fr" target="_blank" rel="noopener">
+            <!-- 🔁 Replace 'asli-home.jpg' by your real screenshot file -->
+            <img src="asli-home.jpg" alt="ASLI association website homepage screenshot" style="width:100%; height:100%; object-fit:cover;" />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -557,6 +543,14 @@ body.noscroll{ overflow:hidden }
       <h2 class="section-title">Experience</h2>
       <div class="underline"></div>
       <div class="timeline">
+
+        <!-- ASLI EXPERIENCE -->
+        <div class="t-item card">
+          <div class="t-role">Chargée du développement digital</div>
+          <div class="t-meta">Nov 2025 – Present · <b>Association ASLI (France – Maroc)</b></div>
+          <p>In charge of the association’s digital ecosystem: designed and developed the official website, implemented membership and collaboration forms with automatic emails, and supported social media and digital communication. I work closely with the president and the team to translate their needs into concrete, reliable digital solutions.</p>
+        </div>
+
         <div class="t-item card">
           <div class="t-role">IT Support & Hardware Maintenance — Intern</div>
           <div class="t-meta">May – July 2025 · <b>H2MW Groupe Casablanca</b></div>
@@ -661,7 +655,7 @@ body.noscroll{ overflow:hidden }
 
     // Year in footer
     document.getElementById('yr').textContent = new Date().getFullYear();
-  
+
     // Contact form handler (mailto demo)
     const form = document.getElementById('contactForm');
     const sendBtn = document.getElementById('sendBtn');
@@ -690,34 +684,32 @@ ${data.message}`);
     });
 
     // Mobile menu toggle
-const ham = document.getElementById('ham');
-const mnav = document.getElementById('mobileMenu');
-const mnavClose = document.getElementById('mnavClose');
+    const ham = document.getElementById('ham');
+    const mnav = document.getElementById('mobileMenu');
+    const mnavClose = document.getElementById('mnavClose');
 
-function closeMenu(){
-  ham?.setAttribute('aria-expanded','false');
-  mnav?.classList.remove('open');
-  if (mnav) mnav.hidden = true;
-  document.body.classList.remove('noscroll');
-  if (ham) ham.style.display = 'inline-flex';  // show hamburger again
-}
+    function closeMenu(){
+      ham?.setAttribute('aria-expanded','false');
+      mnav?.classList.remove('open');
+      if (mnav) mnav.hidden = true;
+      document.body.classList.remove('noscroll');
+      if (ham) ham.style.display = 'inline-flex';  // show hamburger again
+    }
 
-ham?.addEventListener('click', ()=>{
-  const open = ham.getAttribute('aria-expanded') === 'true';
-  ham.setAttribute('aria-expanded', String(!open));
-  if (mnav){
-    mnav.hidden = open ? true : false;
-    mnav.classList.toggle('open', !open);
-  }
-  document.body.classList.toggle('noscroll', !open);
-  if (ham) ham.style.display = open ? 'inline-flex' : 'none'; // hide when menu opens
-});
+    ham?.addEventListener('click', ()=>{
+      const open = ham.getAttribute('aria-expanded') === 'true';
+      ham.setAttribute('aria-expanded', String(!open));
+      if (mnav){
+        mnav.hidden = open ? true : false;
+        mnav.classList.toggle('open', !open);
+      }
+      document.body.classList.toggle('noscroll', !open);
+      if (ham) ham.style.display = open ? 'inline-flex' : 'none'; // hide when menu opens
+    });
 
-mnavClose?.addEventListener('click', closeMenu);
-mnav?.addEventListener('click', e=>{ if(e.target.matches('a')) closeMenu(); });
-
+    mnavClose?.addEventListener('click', closeMenu);
+    mnav?.addEventListener('click', e=>{ if(e.target.matches('a')) closeMenu(); });
   </script>
-  
+
 </body>
 </html>
-
